@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <style>
+      html, body {
+          margin: 50;
+          padding: 50;
+          height: 100%;
+          outline: none;
+          box-sizing: border-box;
+      }
+      .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .label-text{
+        font-size:25px;
+        margin-left: 30px;
+        margin-bottom: 20px;
+      }
+      .input-box{
+        appearance: none;
+        background: none;
+        border: none;
+        outline: none;
+
+        background-color: #f3f3f3;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+
+        display: block;
+        width: 100%;
+        max-width: 600px;
+        padding: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+
+        color: #313131;
+        font-size: 20px;
+      }
+      .btn{
+        appearance: none;
+        background: none;
+        border: none;
+        outline: none;
+
+        font-size: 20px;
+        margin-left: 70px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+        background-color: #AAA;
+        color: white;
+        border-radius: 8px;
+        border-color: #AAA;
+        width: 100px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/" method="post">
+        <label for="equation" class="label-text">Enter Equation </label>
+        <input class="input-box" type="text" id="equation" name="equation">
+        <input class="btn" type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
+
+
+
+
+<!-- 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IC</title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js" integrity="sha256-WVsM3xrcqyuFNF3W1qtIKbHFsD0977nDQA8DCMp1zCw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js" integrity="sha256-2/3R3NV5zryj0fDjD3cDh+SNiWQ/TJiMVZzAo5FrhiU=" crossorigin="anonymous"></script>
+
+    <style>
+        #root, html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        #container {
+            margin-top: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .draw {
+            border: 1px solid #000;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin-top: 50px; text-align: center;">
+      <div>
+        Entered equation:
+        <input id=enter-container type="text" />
+      </div>
+      <button type="button" onclick="predict()">Predict</button>
+      <div style="margin-top: 25px">
+        Solution:
+        <div id=solution-container></div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+
+    function predict() {
+       
+        const data = {
+          equation : document.getElementById("enter-container").value
+        }
+
+        console.log(data);
+
+        // $.ajax({
+        //   url: '/predict',
+        //   type:'POST',
+        //   data,
+        // }).done(function(data) {
+        //     let result = JSON.parse(data);
+        //     console.log(result.Entered_equation)
+        //     $('#enter-container').html(result.equation);
+        //     $('#solution-container').html(result.solution);
+        // }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+        //     console.log(XMLHttpRequest);
+        //     alert("error");
+        // })
+
+        $.ajax({
+          url: '/predict',
+          type: 'POST',
+          data,
+        }).done((data) => {
+          console.log(data)
+          document.getElementById("solution-container").value = data.equation
+        })
+
+
+    }
+    </script>
+</body>
+</html> -->
