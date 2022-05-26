@@ -2,8 +2,6 @@ from sympy.abc import *
 from sympy import solve
 from sympy.parsing.sympy_parser import parse_expr
 from sympy import Symbol
-from torch import eq
-
 
 def calculate(equation1,equation2,id):
     if id == 1:

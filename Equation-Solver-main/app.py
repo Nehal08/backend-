@@ -23,6 +23,7 @@ def index():
         eq2 = data['equation2']
         id = data['id']
         print(eq1)
+        soltn = None
         try:
             soltn= calculate(eq1,eq2,id)
             res = 'Solved Successfully'
